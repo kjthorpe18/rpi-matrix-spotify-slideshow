@@ -66,7 +66,7 @@ def main():
 
     # generate image
     while True:
-        time.sleep(5)
+        time.sleep(10)
         frame = app_list[0].generate_frame()
 
         if frame is None:

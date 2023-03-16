@@ -1,6 +1,6 @@
 # rpi-spotify-matrix-display
 
-Displays album art for a user's recent top tracks on a 64x64 RGB LED matrix
+Displays album art for a user's top tracks on a 64x64 RGB LED matrix
 
 ## Spotify Pre-Setup
 1. Go to https://developer.spotify.com/dashboard
