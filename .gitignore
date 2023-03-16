@@ -1,0 +1,8 @@
+__pycache__
+.idea/
+.DS_Store
+lib
+bin
+
+rpi-rgb-led-matrix
+impl/.cache
