@@ -1,10 +1,11 @@
 import os, requests, spotipy
 
 class SpotifyModule:
-    def __init__(self, config):
+    def __init__(self, config, time_range):
         self.invalid = False
         self.calls = 0
         self.config = config
+        self.time_range = time_range
         self.unique_albums = {}
 
         if config is not None and 'Spotify' in config and 'client_id' in config['Spotify'] \
@@ -38,7 +39,7 @@ class SpotifyModule:
         if self.invalid:
             return
         try:
-            tracks_resp = self.sp.current_user_top_tracks(limit=20, offset=0, time_range='medium_term')
+            tracks_resp = self.sp.current_user_top_tracks(limit=20, offset=0, time_range=self.time_range)
             tracks = tracks_resp['items']
 
             if (len(tracks)):

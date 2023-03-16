@@ -32,6 +32,7 @@ Options:
 | Argument | Default | Description |
 | :- | :- | :- |
 |`-e` , `--emulated`| false | Run in a matrix emulator |
+|`-t` , `--timerange`| s (short_term) | Time range to use when fetching top Spotify tracks. Options: `s`, `m`, `l` |
 |`-h` , `--help`| false | Display help messages for arguments |
 
 ## Configuration

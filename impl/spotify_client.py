@@ -55,7 +55,7 @@ class SpotifyScreen:
             frame = Image.new("RGB", (self.canvas_width, self.canvas_height), (0, 0, 0))
             frame.paste(self.current_art_img, (0, 0))
 
-            self.debug(item)
+            # self.debug(item)
 
             self.response_iterator = self.response_iterator + 1
             return frame

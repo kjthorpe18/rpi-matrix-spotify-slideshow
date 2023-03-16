@@ -15,10 +15,20 @@ def main():
                     description='Displays album art of a user\'s top tracks on an LED matrix')
 
     parser.add_argument('-e', '--emulated', action='store_true', help='Run in a matrix emulator')
+    parser.add_argument('-t', '--timerange', default='s', choices=['s', 'm', 'l'], help='Time range to use when fetching top Spotify tracks.')
     args = parser.parse_args()
 
     is_emulated = args.emulated
+
+    if args.timerange == 'm':
+        time_range = 'medium_term'
+    elif args.timerange == 'l':
+        time_range = 'long_term'
+    else:
+        time_range = 'short_term'
+
     print("Emulated: " + str(is_emulated))
+    print("Time range: " + time_range)
 
     # switch matrix library import if emulated
     if is_emulated:
@@ -38,7 +48,7 @@ def main():
         sys.exit()
 
     # connect to Spotify and create display image
-    modules = {'spotify': spotify_module.SpotifyModule(config)}
+    modules = {'spotify': spotify_module.SpotifyModule(config, time_range)}
     app_list = [spotify_client.SpotifyScreen(config, modules)]
 
     # setup matrix
