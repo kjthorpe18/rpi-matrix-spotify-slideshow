@@ -1,4 +1,4 @@
-# rpi-spotify-matrix-display
+# rpi-matrix-spotify-slideshow
 
 Displays album art for a user's top tracks on a 64x64 RGB LED matrix
 
